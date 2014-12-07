@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	h1 Users List
+	table(border="1",cellpadding="10")
+		tr
+			th Name
+			th Email
+			th
+			th
+			th
+		each user in userlist
+			tr
+				td #{user.name.firstName} #{user.name.lastName}
+				td #{user.email}
+				td
+					a(href="/users/#{user._id}") Get Details
+				td
+					a(href="/users/#{user._id}/edit") Edit Details
+				td
+					form(method="post", action="/users/user/#{user._id}")
+						input(type="hidden", value="#{user._id}", name="id")
+						input(type="hidden", name="_method", value="delete")
+						button(type="submit") Delete
+	<br>
+	<br>
+	a(href="/users/add") Add New User

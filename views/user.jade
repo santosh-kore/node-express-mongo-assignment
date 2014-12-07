@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	a(href="/users") Back
+	h1 User Details
+	table(border="1",cellpadding="10")
+		tr
+			th Name
+			th Email
+			th Gender
+			th City
+			th Company
+		tr
+			td #{user.name.firstName} #{user.name.lastName}
+			td #{user.email}
+			td #{user.gender}
+			td #{user.city}
+			td #{user.company}

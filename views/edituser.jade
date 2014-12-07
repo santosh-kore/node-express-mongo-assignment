@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	h1 Create New User
+	form#edituserform(ame="newuser",method="post",action="/users/edituser")
+		input(type="text", placeholder="Firstname", name="firstName", value="#{user.name.firstName}")
+		<br>
+		<br>
+		input(type="text", placeholder="Lastname", name="lastName", value="#{user.name.lastName}")
+		<br>
+		<br>
+		input(type="email", placeholder="abc@xyz.com", name="email", value="#{user.email}")
+		<br>
+		<br>
+		input(type="radio", name="gender", value="M", checked="#{user.gender}"==="M")
+		| Male
+		input(type="radio", name="gender", value="F", checked="#{user.gender}"==="F")
+		| Female
+		<br>
+		<br>
+		input(type="text", placeholder="Company name", name="company", value="#{user.company}")
+		<br>
+		<br>
+		input(type="text", placeholder="City name", name="city", value="#{user.city}")
+		input(type="hidden", name="id", value="#{user._id}")
+		input(type="hidden", name="_method", value="put")
+		<br>
+		<br>
+		button(type="submit") Edit User
+
+

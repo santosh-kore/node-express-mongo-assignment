@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	h1 Create New User
+	form#userform(ame="newuser",method="post",action="/users/newuser")
+		input(type="text", placeholder="Firstname", name="firstName")
+		<br>
+		<br>
+		input(type="text", placeholder="Lastname", name="lastName")
+		<br>
+		<br>
+		input(type="email", placeholder="abc@xyz.com", name="email")
+		<br>
+		<br>
+		input(type="radio", name="gender", value="M")
+		| Male
+		input(type="radio", name="gender", value="F")
+		| Female
+		<br>
+		<br>
+		input(type="text", placeholder="Company name", name="company")
+		<br>
+		<br>
+		input(type="text", placeholder="City name", name="city")
+		<br>
+		<br>
+		button(type="submit") Create User
+
+
